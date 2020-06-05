@@ -1,0 +1,128 @@
+.contenedor {
+    width: 100%;
+    height: 100vh;
+    background: #dcc4fc;
+}
+
+.contenedor .circulo {
+    width: 100%;
+    height: 100%;
+    border-radius: 250px;
+    background: linear-gradient(90deg, rgba(255, 206, 159, 1) 0%, rgba(255, 188, 159, 1) 47%, rgba(255, 187, 201, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .circulo .detalles {
+    width: 80%;
+    height: 90%;
+}
+
+.contenedor .circulo .detalles .temperatura {
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(180deg, rgba(109, 105, 173, 1) 0%, rgba(186, 148, 180, 1) 50%, rgba(240, 178, 185, 1) 100%);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    display: flex;
+}
+
+.contenedor .circulo .detalles .temperatura .columnaDatos {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor .circulo .detalles .temperatura .columnaDatos .grados {
+    width: 100%;
+    font-size: 64px;
+    margin: 0;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.contenedor .circulo .detalles .temperatura .grados>span {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.contenedor .circulo .detalles .temperatura .columnaDatos .info {
+    width: 100%;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFF;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor .circulo .detalles .temperatura .columnaDatos .info>span {
+    margin-right: 25px;
+}
+
+.contenedor .circulo .detalles .temperatura .columnaNombre {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.contenedor .circulo .detalles .temperatura .columnaNombre h3 {
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+.contenedor .circulo .detalles .climaPronosticado {
+    width: 100%;
+    height: 30%;
+    background: #FFF;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+}
+
+.contenedor .circulo .detalles .climaPronosticado .pronosticoDia {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #485184;
+}
+
+.contenedor .circulo .detalles .climaPronosticado .pronosticoDia .dia {
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.contenedor .circulo .detalles .climaPronosticado .pronosticoDia .temp {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.contenedor .circulo .detalles .climaPronosticado .pronosticoDia img {
+    height: 50%;
+}
+
+.contenedor .circulo .detalles .climaPronosticado .pronosticoDia .tipo {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

@@ -45,6 +45,14 @@ export interface ClimaFiltrado{
     Imagen: string;
 }
 
+export interface ClimaDetalle{
+    NombreCiudad: string;
+    ClimaActual: string;
+    TemperaturaActual: number;
+    Humedad: number;
+    Aire: number;
+}
+
 export interface Clima {
     coord: Coord;
     weather: Weather[];

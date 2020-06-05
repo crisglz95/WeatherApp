@@ -1,6 +1,6 @@
 <div class="contenedor">
     <ng-container *ngIf="!loading">
-        <app-cards-weather [style.height.%]="60" [style.margin-top.px]="-50" *ngFor="let clima of arrayClimaFiltrado" [climaFiltradoRecibido]="clima"></app-cards-weather>
+        <app-cards-weather [style.height.%]="60" [style.margin-top.px]="-50" *ngFor="let clima of arrayClimaFiltrado" [climaFiltradoRecibido]="clima" [mostrarBoton]="false"></app-cards-weather>
     </ng-container>
     <div class="tarjeta" (click)="IrAgregar()">
         <p>Agregar Ciudad</p>

@@ -12,6 +12,7 @@ import { ConstruirUrlImagenPipe } from './components/pipe/construir-url-imagen.p
 import { HomeComponent } from './components/home/home.component';
 import { appRouting } from './app.routes';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { DetallesComponent } from './components/detalles/detalles.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     KelvinToCelsiusPipe,
     CambiarImagenClimaDirective,
     ConstruirUrlImagenPipe,
-    HomeComponent
+    HomeComponent,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,

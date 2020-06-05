@@ -1,0 +1,36 @@
+<div class="contenedor">
+    <div class="circulo">
+        <div class="detalles">
+            <div class="temperatura" *ngIf="!loading">
+                <div class="columnaDatos">
+                    <div class="grados">
+                        <p>{{DetalleClima.TemperaturaActual |kelvinToCelsius}}</p>
+                        <span>{{DetalleClima.ClimaActual}}</span>
+                    </div>
+                    <div class="info">
+                        <span>
+                            <p>Humidity</p>
+                            <p>{{DetalleClima.Humedad}}%</p>
+                        </span>
+                        <span>
+                            <p>Wind</p>
+                            <p>{{DetalleClima.Aire}} KM/H</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="columnaNombre">
+                    <h3>{{DetalleClima.NombreCiudad}}</h3>
+                </div>
+            </div>
+            <div class="climaPronosticado">
+                <div class="pronosticoDia">
+                    <div class="dia">MON</div>
+                    <img src="./../../../assets/img/cloudy.PNG" alt="">
+                    <span class="temp">33°</span>
+                    <span class="tipo">Clear</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
