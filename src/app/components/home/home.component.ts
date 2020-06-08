@@ -4,6 +4,7 @@ import { from } from 'rxjs';
 import { concatMap, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Clima, ClimaFiltrado } from '../../interfaces/clima.interface';
+import { ApiWeatherService } from '../../services/api-weather.service';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +12,10 @@ import { Clima, ClimaFiltrado } from '../../interfaces/clima.interface';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private url = `https://api.openweathermap.org/data/2.5/weather?q=`;
-  private apiKey = `&appid=03660e9db7dd1d5898fda207bb6c5775`;
   public arrayClimaFiltrado: Array<ClimaFiltrado> = [];
   public loading: boolean = true;
 
-  constructor(private router: Router, private http: HttpClient) { 
+  constructor(private router: Router, private AWService: ApiWeatherService) { 
     this.getLocalStorage();
   }
 
@@ -36,7 +35,7 @@ export class HomeComponent implements OnInit {
 
   public getWeather(climas: Array<string>){
     from(climas).pipe(
-      concatMap(nombreClima => this.http.get(`${this.url}${nombreClima}${this.apiKey}`)
+      concatMap((nombreClima:string) => this.AWService.ObtenerClima(nombreClima)
       .pipe(
         map((Clima: Clima) => {
           const climaFiltrado: ClimaFiltrado = {

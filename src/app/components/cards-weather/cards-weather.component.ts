@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ClimaFiltrado } from '../../interfaces/clima.interface'
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cards-weather',
@@ -20,9 +21,22 @@ export class CardsWeatherComponent implements OnInit {
 
   public AgregarCiudad(){
     const arrayWeather = this.GetLocalStorage();
-    arrayWeather.push(this.climaFiltradoRecibido.NombreCiudad);
     console.log(arrayWeather);
-    localStorage.setItem('climas', JSON.stringify(arrayWeather));
+    if (this.ChecarNoRepetidos(arrayWeather) === 0){
+      arrayWeather.push(this.climaFiltradoRecibido.NombreCiudad);
+      console.log(arrayWeather);
+      localStorage.setItem('climas', JSON.stringify(arrayWeather));
+    }else{
+      Swal.fire({
+        title: 'Ciudad Repetida',
+        icon: 'warning',
+        text: 'La ciudad elegida ya fue anteriormente seleccionada'
+      })
+    }
+  }
+  private ChecarNoRepetidos(arrayWeather: Array<string>):number{
+    const ciudades: Array<string> = arrayWeather.filter(clima => clima === this.climaFiltradoRecibido.NombreCiudad);
+    return ciudades.length;
   }
 
   public GetLocalStorage(){
